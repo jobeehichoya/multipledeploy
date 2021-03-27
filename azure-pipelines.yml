@@ -17,17 +17,6 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Visual Studio Enterprise (0e530a5c-6e1d-435c-a43c-26517d9e4239)'
-    subscriptionId: '0e530a5c-6e1d-435c-a43c-26517d9e4239'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: 'repro'
-    location: 'West Europe'
-    templateLocation: 'Linked artifact'
-    csmFile: '/'
-    deploymentMode: 'Incremental'
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(agent.builddirectory)'
